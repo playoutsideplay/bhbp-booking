@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Widget Test</title>
+  <style>
+    /* Make the body a flex container */
+    body {
+      display: flex;              /* Enable Flexbox */
+      justify-content: center;    /* Center horizontally */
+      align-items: center;        /* Center vertically */
+      min-height: 100vh;          /* Ensure the body takes up the full viewport height */
+      margin: 0;                  /* Remove default margins */
+    }
+
+    bt-booking-widget {
+      display: block;
+      width: 80%;                 /* Set the desired width */
+      max-width: 600px;           /* Optional: set a maximum width */
+      height: auto;               /* Adjust height automatically */
+    }
+  </style>
+  <!-- Include the polyfill if needed -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-bundle.js"></script>
+</head>
+<body>
+  <bt-booking-widget></bt-booking-widget>
+  <script src="https://ordertab.menu/blackhorsepelham/widget" type="text/javascript"></script>
+</body>
+</html>
