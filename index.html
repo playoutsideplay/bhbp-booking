@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>The Black Horse</title>
-  <!-- Viewport Meta Tag for Mobile Scaling -->
+  <!-- Mobile scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* Reset default margins and paddings */
+    /* Reset & center */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    /* Make the body a flex container */
     body {
-      display: flex;              /* Enable Flexbox */
-      justify-content: center;    /* Center horizontally */
-      align-items: center;        /* Center vertically */
-      min-height: 100vh;          /* Full viewport height */
-      margin: 0;                  /* Remove default margins */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-
     bt-booking-widget {
       display: block;
-      width: 100%;                /* Full width on mobile */
-      max-width: 600px;           /* Limit width on larger screens */
-      height: auto;               /* Adjust height automatically */
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* Optional: Adjustments for larger screens */
-    @media (min-width: 768px) {
-      bt-booking-widget {
-        width: 80%;               /* Adjust width for tablets and up */
+    /* Responsive grid layout for the booking form */
+    bt-booking-widget form {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      gap: 1rem !important;
+      padding: 1rem 0 !important;
+    }
+    bt-booking-widget form button,
+    bt-booking-widget form input[type="submit"] {
+      grid-column: 1 / -1 !important;
+    }
+    @media (max-width: 600px) {
+      bt-booking-widget form {
+        grid-template-columns: 1fr !important;
       }
     }
+
   </style>
-  <!-- Include the polyfill if needed -->
+
+  <!-- Web Components polyfill if needed -->
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-bundle.js"></script>
 </head>
 <body>
